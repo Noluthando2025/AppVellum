@@ -65,7 +65,9 @@ body {
     }
 
 
-/*nav bar*/
+/* ========================================
+Navigation Bar
+======================================== */
         .app-navbar {
     width: 100%;
     border-bottom: 1px solid #e5e7eb;
@@ -104,3 +106,103 @@ body {
 .nav-links a:hover {
     color: #2563EB;
 }
+
+/* ========================================
+LOGIN PAGE
+======================================== */
+
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .login-header h1 {
+        margin-bottom: 8px;
+    }
+
+    .login-header p {
+        color: #666;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+    .login-options a {
+        text-decoration: none;
+    }
+
+.login-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .login-button:hover {
+        opacity: 0.9;
+    }
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+    .register-link p {
+        margin: 0;
+    }
+
+    .register-link a {
+        font-weight: 600;
+        text-decoration: none;
+    }
