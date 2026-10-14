@@ -1,3 +1,19 @@
+:root {
+    /* Brand colours */
+    --color-primary: #793F50;
+    --color-primary-hover: #633241;
+    --color-accent: #B97980;
+    --color-blush: #F4E7E3;
+    /* Backgrounds */
+    --color-background: #FFF9F4;
+    --color-surface: #FFFFFF;
+    /* Text */
+    --color-text: #49353D;
+    --color-text-muted: #786A6E;
+    /* Borders */
+    --color-border: #E8DCD6;
+}
+
 html {
   font-size: 14px;
 }
@@ -90,6 +106,13 @@ Navigation Bar
     text-decoration: none;
     color: #2563EB;
 }
+
+    .nav-logo img {
+        display: block;
+        width: 130px;
+        height: 60px;
+        object-fit: contain;
+    }
 
 .nav-links {
     display: flex;
@@ -428,3 +451,47 @@ LOGIN PAGE
         flex-direction: column;
     }
 }
+
+
+/* ========================================
+   APPVELLUM BRAND THEME
+   Dusty Rose & Burgundy
+======================================== */
+
+/* Global page styling */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Main navigation */
+.app-navbar {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+    .nav-links a:hover {
+        color: var(--color-primary);
+    }
+
+/* Main headings */
+h1,
+h2,
+h3 {
+    color: var(--color-text);
+}
+
+/* General links */
+a {
+    transition: color 0.2s ease;
+}
+
+    a:hover {
+        color: var(--color-primary-hover);
+    }
