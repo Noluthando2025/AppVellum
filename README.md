@@ -111,7 +111,7 @@ Before running this project, ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/AppVellum.git
+   git clone https://github.com/Noluthando2025/AppVellum.git
    ```
 
 2. Navigate to the project directory:
