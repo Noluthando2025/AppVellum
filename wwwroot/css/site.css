@@ -37,48 +37,259 @@ body {
   margin-bottom: 60px;
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
+
+/* ========================================
+   APPVELLUM LANDING PAGE
+======================================== */
+
+.landing-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 20px 80px;
 }
 
-    .hero h1 {
-        font-size: 56px;
-        margin-bottom: 10px;
+    /* Hero section */
+
+    .landing-page .hero {
+        text-align: center;
+        padding: 75px 20px 85px;
     }
 
-    .hero h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
+.hero-badge {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--color-border);
+    border-radius: 30px;
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.landing-page .hero h1 {
+    max-width: 850px;
+    margin: 0 auto;
+    color: var(--color-text);
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 750;
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+    .landing-page .hero h1 span {
+        color: var(--color-primary);
     }
 
-    .hero p {
-        font-size: 18px;
-        max-width: 600px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-    }
+.hero-description {
+    max-width: 650px;
+    margin: 25px auto 30px;
+    color: var(--color-text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
 
-.hero-buttons {
+/* Hero buttons */
+
+.landing-page .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 6px;
-    background-color: #2563EB;
-    color: white;
-}
-
-    .btn.secondary {
-        background-color: transparent;
-        color: #2563EB;
-        border: 1px solid #2563EB;
+    .landing-page .hero-buttons .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 13px 23px;
+        border: 1px solid var(--color-primary);
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
+
+.landing-page .hero-btn-primary {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+    .landing-page .hero-btn-primary:hover {
+        background-color: var(--color-primary-hover);
+        color: #FFFFFF;
+        transform: translateY(-2px);
+    }
+
+.landing-page .hero-btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+    .landing-page .hero-btn-secondary:hover {
+        background-color: var(--color-blush);
+        color: var(--color-primary-hover);
+    }
+
+.hero-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.hero-note-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Features section */
+
+.features-section {
+    padding: 55px 0 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.features-heading {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.section-eyebrow {
+    margin-bottom: 12px;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.features-heading h2 {
+    margin: 0 0 12px;
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.features-heading > p:last-child {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Feature cards */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(73, 53, 61, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 7px 20px rgba(73, 53, 61, 0.07);
+    }
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+    font-size: 24px;
+}
+
+.feature-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Landing page responsive layout */
+
+@media (max-width: 768px) {
+    .landing-page {
+        padding: 20px 18px 55px;
+    }
+
+        .landing-page .hero {
+            padding: 65px 5px;
+        }
+
+            .landing-page .hero h1 {
+                letter-spacing: -1px;
+            }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    .features-section {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badge {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+    }
+
+    .landing-page .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .landing-page .hero-buttons .btn {
+            width: 100%;
+            box-sizing: border-box;
+        }
+}
 
 
 /* ========================================
@@ -494,4 +705,134 @@ a {
 
     a:hover {
         color: var(--color-primary-hover);
+    }
+
+
+/* ========================================
+   APPVELLUM DASHBOARD POLISH
+======================================== */
+
+/* Dashboard heading */
+.dashboard-eyebrow {
+    color: var(--color-primary);
+}
+
+.dashboard-subtitle {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* Dashboard title */
+.dashboard-header h1 {
+    letter-spacing: -1px;
+}
+
+/* Add Application button */
+.add-application-btn {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border: 1px solid var(--color-primary);
+    white-space: nowrap;
+}
+
+    .add-application-btn:hover {
+        background-color: var(--color-primary-hover);
+        color: #FFFFFF;
+        box-shadow: 0 5px 14px rgba(121, 63, 80, 0.18);
+    }
+
+    .add-application-btn span {
+        color: #FFFFFF;
+    }
+
+/* Statistics cards */
+.stat-card {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: 0 2px 8px rgba(73, 53, 61, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(73, 53, 61, 0.07);
+    }
+
+.stat-card-top p {
+    color: var(--color-text-muted);
+}
+
+.stat-card h2 {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+}
+
+/* Recent Applications section */
+.applications-section {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: 0 2px 8px rgba(73, 53, 61, 0.03);
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+}
+
+.view-all-link {
+    color: var(--color-primary);
+}
+
+    .view-all-link:hover {
+        color: var(--color-primary-hover);
+    }
+
+/* Empty state */
+.empty-state {
+    border-color: var(--color-border);
+    background-color: #FFFCFA;
+}
+
+.empty-state-icon {
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+}
+
+.empty-state h3 {
+    color: var(--color-text);
+}
+
+.empty-state p {
+    color: var(--color-text-muted);
+}
+
+/* Empty state action button */
+.empty-state-btn {
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease;
+}
+
+    .empty-state-btn:hover {
+        background-color: #EBD5D2;
+        color: var(--color-primary-hover);
+    }
+
+    /* Keyboard accessibility */
+    .add-application-btn:focus-visible,
+    .empty-state-btn:focus-visible,
+    .view-all-link:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
     }

@@ -1,30 +1,106 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<!--this is the home page-->
-<div class="hero">
-    <h1>AppVellum</h1>
+<!-- AppVellum Landing Page -->
+<div class="landing-page">
 
-    <h2>Oragnise Your Job Search</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-badge">
+            YOUR CAREER JOURNEY, ORGANISED
+        </div>
+
+        <h1>
+            Your next opportunity<br />
+            starts with a <span>plan.</span>
+        </h1>
+
+        <p class="hero-description">
+            Track, manage and monitor your job and internship
+            applications in one centralised platform.
+            Stay organised, follow your progress, and take control
+            of your career journey.
+        </p>
+
+        <div class="hero-buttons">
+            <a asp-controller="Account"
+               asp-action="Register"
+               class="btn hero-btn-primary">
+                Get Started <span>→</span>
+            </a>
+
+            <a href="#features" class="btn hero-btn-secondary">
+                Explore Features
+            </a>
+        </div>
+
+        <div class="hero-note">
+            <span class="hero-note-icon">✓</span>
+            One place for every opportunity.
+        </div>
+
+    </section>
 
 
-    <p>Track, manage and monitor your job and internship applications
-        in one centralised platform</p>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
 
-    <div class="hero-buttons">
-        <a href="#" class="btn">Get Started</a>
-        <a href="#" class="btn secondary">Learn More</a>
-    </div>
+        <div class="features-heading">
+            <p class="section-eyebrow">MADE FOR YOUR NEXT STEP</p>
+
+            <h2>Your job search, simplified.</h2>
+
+            <p>
+                Spend less time managing applications and more time
+                preparing for your next opportunity.
+            </p>
+        </div>
+
+
+        <div class="features-grid">
+
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon">▤</div>
+
+                <h3>Track Applications</h3>
+
+                <p>
+                    Keep your job and internship applications
+                    organised in one convenient place.
+                </p>
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon">◷</div>
+
+                <h3>Stay on Schedule</h3>
+
+                <p>
+                    Keep important dates, deadlines and follow-ups
+                    on your radar.
+                </p>
+            </div>
+
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon">↗</div>
+
+                <h3>Monitor Your Progress</h3>
+
+                <p>
+                    Follow your applications as they move through
+                    different stages of the hiring process.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
 
 </div>
-
-
-
-
-
-
-
-
-
-
