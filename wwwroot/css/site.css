@@ -857,3 +857,155 @@ a {
     background-color: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
 }
+
+/* ================================
+   APPLICATIONS PAGE
+   ================================ */
+
+.applications-page {
+    padding: 40px;
+}
+
+.applications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .applications-header h1 {
+        margin: 0;
+        color: var(--color-text);
+        font-size: 32px;
+    }
+
+    .applications-header p {
+        margin-top: 8px;
+        color: var(--color-text-muted);
+    }
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+    .btn-primary:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+.applications-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 320px;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+    .search-box input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button {
+    padding: 11px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .filter-button:hover {
+        background-color: var(--color-blush);
+    }
+
+.applications-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.applications-table {
+    width: 100%;
+}
+
+.table-header,
+.application-row {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1fr 1.2fr 0.6fr;
+    align-items: center;
+    column-gap: 20px;
+    padding: 18px 24px;
+}
+
+.table-header {
+    background-color: var(--color-blush);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.application-row {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+    .application-row:hover {
+        background-color: var(--color-background);
+    }
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-applied {
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+}
+
+.status-interview {
+    background-color: #eee7f4;
+    color: #684c78;
+}
+
+.status-rejected {
+    background-color: #f3e1e1;
+    color: #8a4b4b;
+}
+
+.row-action {
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .row-action:hover {
+        text-decoration: underline;
+    }

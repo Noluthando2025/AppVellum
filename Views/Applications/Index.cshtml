@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Applications";
+}
+
+<!--this page helps the user keep track of all their job applications.-->
+<div class="applications-page">
+
+    <div class="applications-header">
+        <div>
+            <h1>Applications</h1>
+            <p>Keep track of every opportunity you're pursuing!</p>
+        </div>
+
+        <a href="#" class="btn-primary">+ Add Application</a>
+    </div>
+
+    <div class="applications-toolbar">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search applications..." />
+        </div>
+
+        <div class="filter-options">
+            <button class="filter-button">Filter</button>
+            <button class="filter-button">Sort</button>
+        </div>
+
+    </div>
+
+    <div class="applications-card">
+
+        <div class="applications-table">
+
+            <div class="table-header">
+                <span>Company</span>
+                <span>Job Title</span>
+                <span>Status</span>
+                <span>Applied</span>
+                <span></span>
+            </div>
+
+            <div class="application-row">
+                <span>Sanlam</span>
+                <span>Junior Software Developer</span>
+                <span>
+                    <span class="status-badge status-applied">Applied</span>
+                </span>
+                <span>18 Oct 2026</span>
+                <span class="row-action">View</span>
+            </div>
+
+            <div class="application-row">
+                <span>Microsoft</span>
+                <span>Data Engineer</span>
+                <span>
+                    <span class="status-badge status-interview">Interview</span>
+                </span>
+                <span>15 Oct 2026</span>
+                <span class="row-action">View</span>
+            </div>
+
+            <div class="application-row">
+                <span>AWS</span>
+                <span>Software Developer</span>
+                <span>
+                    <span class="status-badge status-rejected">Rejected</span>
+                </span>
+                <span>10 Oct 2026</span>
+                <span class="row-action">View</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
