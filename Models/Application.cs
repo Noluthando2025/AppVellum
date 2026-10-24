@@ -21,11 +21,17 @@ namespace AppVellum.Models
 
         public DateTime? DateApplied { get; set; }
 
+        public DateTime? ApplicationDeadline { get; set; }
+
+        public DateTime? InterviewDate { get; set; }
+
+        public DateTime? FollowUpDate { get; set; }
+
         [Required]
         [RegularExpression(
-            "^(Saved|Applied|Assessment|Interview|Offer|Rejected|Withdrawn)$",
-            ErrorMessage = "Please select a valid application status."
-        )]
+     "^(Saved|Applied|Interview|Assessment|Offer|Rejected|Withdrawn)$",
+     ErrorMessage = "Please select a valid application status."
+ )]
         public string Status { get; set; } = "Saved";
 
         [StringLength(100)]
