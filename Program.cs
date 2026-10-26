@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using AppVellum.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register the AppVellum database context.
+builder.Services.AddDbContext<AppVellumDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

@@ -17,5 +17,8 @@ namespace AppVellum.Models
 
         [StringLength(100)]
         public string? Industry { get; set; }
+
+        public ICollection<Application> Applications { get; set; }
+        = new List<Application>();
     }
 }

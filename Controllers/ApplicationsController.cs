@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AppVellum.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppVellum.Controllers
 {
     public class ApplicationsController : Controller
     {
-        public IActionResult Index()
+        private readonly AppVellumDbContext _context;
+
+        public ApplicationsController(AppVellumDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var applications = await _context.Applications
+                .Include(a => a.Company)
+                .ToListAsync();
+
+            return View(applications);
         }
     }
 }
