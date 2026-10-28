@@ -1,0 +1,111 @@
+﻿@model AppVellum.Models.Application
+
+@{
+    ViewData["Title"] = "Add Application";
+    var companies = ViewBag.Companies as List<AppVellum.Models.Company>
+        ?? new List<AppVellum.Models.Company>();
+}
+
+<div class="applications-page">
+    <div class="applications-header">
+        <div>
+            <h1>Add Application</h1>
+            <p>Keep all the details of your job opportunity in one place.</p>
+        </div>
+
+        <a asp-action="Index" class="btn-primary">Back to Applications</a>
+    </div>
+
+    <div class="applications-card">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="JobTitle">Job Title *</label>
+                <input asp-for="JobTitle" class="form-control"
+                       placeholder="e.g. Junior Software Developer" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="CompanyId">Company *</label>
+                <select asp-for="CompanyId" class="form-control">
+                    <option value="">Select a company</option>
+                    @foreach (var company in companies)
+                    {
+                        <option value="@company.CompanyId">
+                            @company.CompanyName
+                        </option>
+                    }
+                </select>
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Status">Status *</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Saved">Saved</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Assessment">Assessment</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Withdrawn">Withdrawn</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateApplied">Date Applied</label>
+                <input asp-for="DateApplied" type="date" class="form-control" />
+                <span asp-validation-for="DateApplied" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ApplicationDeadline">Application Deadline</label>
+                <input asp-for="ApplicationDeadline" type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="InterviewDate">Interview Date</label>
+                <input asp-for="InterviewDate" type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FollowUpDate">Follow-up Date</label>
+                <input asp-for="FollowUpDate" type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="JobType">Job Type</label>
+                <input asp-for="JobType" class="form-control"
+                       placeholder="e.g. Internship, Full-time, Graduate Programme" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Location">Location</label>
+                <input asp-for="Location" class="form-control"
+                       placeholder="e.g. Johannesburg or Remote" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ApplicationLink">Job Application Link</label>
+                <input asp-for="ApplicationLink" type="url" class="form-control"
+                       placeholder="https://..." />
+                <span asp-validation-for="ApplicationLink" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes">Notes</label>
+                <textarea asp-for="Notes" class="form-control" rows="4"
+                          placeholder="Add reminders or other useful details..."></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-primary">Save Application</button>
+            <a asp-action="Index" class="row-action">Cancel</a>
+        </form>
+    </div>
+</div>

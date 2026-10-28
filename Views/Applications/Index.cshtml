@@ -1,7 +1,8 @@
-﻿@{
+﻿@model IEnumerable<AppVellum.Models.Application>
+
+@{
     ViewData["Title"] = "Applications";
 }
-
 <!--this page helps the user keep track of all their job applications.-->
 <div class="applications-page">
 
@@ -39,38 +40,56 @@
                 <span></span>
             </div>
 
-            <div class="application-row">
-                <span>Sanlam</span>
-                <span>Junior Software Developer</span>
-                <span>
-                    <span class="status-badge status-applied">Applied</span>
-                </span>
-                <span>18 Oct 2026</span>
-                <span class="row-action">View</span>
-            </div>
+            @if (Model.Any())
+            {
+                @foreach (var application in Model)
+                {
+                    <div class="application-row">
+                        <span>
+                            @(application.Company?.CompanyName ?? "Unknown company")
+                        </span>
 
-            <div class="application-row">
-                <span>Microsoft</span>
-                <span>Data Engineer</span>
-                <span>
-                    <span class="status-badge status-interview">Interview</span>
-                </span>
-                <span>15 Oct 2026</span>
-                <span class="row-action">View</span>
-            </div>
+                        <span>@application.JobTitle</span>
 
-            <div class="application-row">
-                <span>AWS</span>
-                <span>Software Developer</span>
-                <span>
-                    <span class="status-badge status-rejected">Rejected</span>
-                </span>
-                <span>10 Oct 2026</span>
-                <span class="row-action">View</span>
-            </div>
+                        <span>
+                            <span class="status-badge @GetStatusClass(application.Status)">
+                                @application.Status
+                            </span>
+                        </span>
 
+                        <span>
+                            @(application.DateApplied?.ToString("dd MMM yyyy") ?? "Not specified")
+                        </span>
+
+                        <span class="row-action">View</span>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="application-row">
+                    <span>No applications yet</span>
+                    <span>Add your first application to get started.</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            }
         </div>
 
     </div>
 
 </div>
+
+@functions {
+    public string GetStatusClass(string status)
+    {
+        return status switch
+        {
+            "Applied" => "status-applied",
+            "Interview" => "status-interview",
+            "Rejected" => "status-rejected",
+            _ => ""
+        };
+    }
+}
