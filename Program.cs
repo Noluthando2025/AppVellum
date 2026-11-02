@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using AppVellum.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppVellumDbContext>()
+    .AddDefaultTokenProviders();
 
 // Register the AppVellum database context.
 builder.Services.AddDbContext<AppVellumDbContext>(options =>
@@ -26,6 +30,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

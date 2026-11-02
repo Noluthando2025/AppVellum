@@ -1,9 +1,9 @@
-﻿
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AppVellum.Models
 {
-    public class AppVellumDbContext : DbContext
+    public class AppVellumDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppVellumDbContext(
             DbContextOptions<AppVellumDbContext> options)
