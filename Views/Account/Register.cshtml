@@ -1,70 +1,61 @@
-﻿@{
-    ViewData["Title"] = "Register";
+﻿@model AppVellum.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Create Account";
 }
 
-<div class="login-container">
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Create your AppVellum account</h1>
+        <p>Start organising your job applications in one place.</p>
 
-    <!--this page is to help the user register an account.-->
-    <div class="login-card">
+        <form asp-action="Register" method="post">
+            @Html.AntiForgeryToken()
 
-        <div class="login-header">
-            <h1>Create Account</h1>
-            <p>Create your AppVellum account</p>
-        </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <form>
-            <!--the form is used to capture the details of the user and store it in a database.-->
             <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text"
-                       id="fullName"
-                       name="fullName"
-                       placeholder="Enter your full name"
-                       required />
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       placeholder="Enter your email address"
-                       required />
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password"
-                       id="password"
-                       name="password"
-                       placeholder="Create a password"
-                       required />
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password"
-                       id="confirmPassword"
-                       name="confirmPassword"
-                       placeholder="Confirm your password"
-                       required />
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="login-button">
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
                 Create Account
             </button>
-
         </form>
 
-        <!--this link will redirect the user to the login page if they already have an account.-->
-        <div class="register-link">
-            <p>
-                Already have an account?
-                <a href="/Account/Login">Login</a>
-            </p>
-        </div>
-
+        <p class="auth-footer">
+            Already have an account?
+            <a asp-action="Login">Sign in</a>
+        </p>
     </div>
-    
-
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

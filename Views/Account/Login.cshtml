@@ -1,60 +1,48 @@
-﻿@{
+﻿@model AppVellum.ViewModels.LoginViewModel
+
+@{
     ViewData["Title"] = "Login";
 }
 
-<div class="login-container">
-    <!--this is the login page where the user can enter their details and login.-->
-    
-    <div class="login-card">
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Welcome back</h1>
+        <p>Sign in to continue managing your applications.</p>
 
-        <div class="login-header">
-            <h1>Welcome Back</h1>
-            <p>Login to your AppVellum account</p>
-        </div>
+        <form asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
 
-        <form>
-            <!--the login form is used to capture the details of the user and validate them against the database.-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       placeholder="Enter your email address"
-                       required />
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password"
-                       id="password"
-                       name="password"
-                       placeholder="Enter your password"
-                       required />
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <div class="login-options">
-                <label>
-                    <input type="checkbox" />
-                    Remember me
-                </label>
-
-                <a href="#">Forgot Password?</a>
+            <div class="form-check">
+                <input asp-for="RememberMe" />
+                <label asp-for="RememberMe"></label>
             </div>
 
-            <button type="submit" class="login-button">
-                Login
+            <button type="submit" class="btn btn-primary">
+                Sign In
             </button>
-
         </form>
 
-        <div class="register-link">
-            <p>
-                Don't have an account?
-                <a href="#">Create an account</a>
-            </p>
-        </div>
-
+        <p class="auth-footer">
+            Don't have an account?
+            <a asp-action="Register">Create an account</a>
+        </p>
     </div>
-    
-
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
