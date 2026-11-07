@@ -1009,3 +1009,194 @@ a {
     .row-action:hover {
         text-decoration: underline;
     }
+
+
+/* ========================================
+   APPVELLUM AUTHENTICATION PAGES
+   Login and Registration
+======================================== */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 50px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background-color: var(--color-surface);
+    box-shadow: 0 5px 20px rgba(73, 53, 61, 0.06);
+}
+
+    /* Authentication headings */
+
+    .auth-card h1 {
+        margin: 0 0 12px;
+        color: var(--color-text);
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.7px;
+    }
+
+    .auth-card > p {
+        margin-bottom: 30px;
+        color: var(--color-text-muted);
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Form layout */
+
+    .auth-card .form-group {
+        margin-bottom: 20px;
+    }
+
+        .auth-card .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+    /* Form inputs */
+
+    .auth-card .form-control {
+        width: 100%;
+        min-height: 46px;
+        padding: 11px 13px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background-color: #FFFCFA;
+        color: var(--color-text);
+        font-size: 14px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .auth-card .form-control:focus {
+            border-color: var(--color-accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(185, 121, 128, 0.15);
+        }
+
+    /* Submit buttons */
+
+    .auth-card .btn-primary {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 10px;
+        border: 1px solid var(--color-primary);
+        border-radius: 8px;
+        background-color: var(--color-primary);
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+        .auth-card .btn-primary:hover {
+            background-color: var(--color-primary-hover);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+    /* Remember me option */
+
+    .auth-card .form-check {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 15px;
+    }
+
+        .auth-card .form-check input {
+            accent-color: var(--color-primary);
+        }
+
+        .auth-card .form-check label {
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+
+    /* Validation messages */
+
+    .auth-card .text-danger {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .auth-card .validation-summary-errors {
+        margin-bottom: 20px;
+        padding: 12px 15px;
+        border: 1px solid #E8CACA;
+        border-radius: 8px;
+        background-color: #FFF4F4;
+        color: #8A4B4B;
+        font-size: 13px;
+    }
+
+/* Links below authentication forms */
+
+.auth-footer {
+    margin: 25px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+    .auth-footer a {
+        color: var(--color-primary);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .auth-footer a:hover {
+            color: var(--color-primary-hover);
+            text-decoration: underline;
+        }
+
+/* Responsive authentication layout */
+
+@media (max-width: 520px) {
+    .auth-container {
+        padding: 30px 15px;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+        .auth-card h1 {
+            font-size: 24px;
+        }
+}
+
+
+/* Navigation logout button */
+.nav-links form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.nav-logout {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+    .nav-logout:hover {
+        color: var(--color-primary);
+    }
