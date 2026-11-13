@@ -1,9 +1,7 @@
-﻿@model AppVellum.Models.Application
+﻿@model AppVellum.ViewModels.CreateApplicationViewModel
 
 @{
     ViewData["Title"] = "Add Application";
-    var companies = ViewBag.Companies as List<AppVellum.Models.Company>
-        ?? new List<AppVellum.Models.Company>();
 }
 
 <div class="applications-page">
@@ -30,17 +28,10 @@
             </div>
 
             <div class="form-group">
-                <label for="CompanyId">Company *</label>
-                <select asp-for="CompanyId" class="form-control">
-                    <option value="">Select a company</option>
-                    @foreach (var company in companies)
-                    {
-                        <option value="@company.CompanyId">
-                            @company.CompanyName
-                        </option>
-                    }
-                </select>
-                <span asp-validation-for="CompanyId" class="text-danger"></span>
+                <label asp-for="CompanyName">Company *</label>
+                <input asp-for="CompanyName" class="form-control"
+                       placeholder="e.g. Sanlam, Microsoft, or a small business" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -109,3 +100,8 @@
         </form>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+s
